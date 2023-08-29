@@ -129,7 +129,88 @@ if(marks>=90) {
 }
 ---------------------------------------
 
+// if else
+let color = "red";
 
+if(color == "red") {
+    console.log("Stop");
+} else if (color == "green") {
+    console.log("Go");
+} else if (color == "yellow") {
+    console.log("get ready");
+} else {
+    console.log("traffic light is broken");
+}
+-------------------------------------------------
+  //EX 2
+let size = "XL";
 
+if (size == "XL") {
+    console.log("Price is 250");
+} else if (size == "L") {
+    console.log("Price is 200");
+} else if (size == "M") {
+    console.log("Price is 150");
+} else if (size == "S") {
+    console.log("Price is 100");
+} else {
+    console.log("Out of stock");
+}
+------------------------------------------
+
+ // Nested if else
+
+let marks = 90;
+if(marks >= 33) {
+    if(marks >= 80) {
+        console.log("O grade");
+    } else {
+        console.log("A grade");
+    } 
+} else {
+    console.log("Better luck next time");
+}
+----------------------------------------------
+  //LOgical AND
+  
+ let marks = 90;
+
+ if((marks >= 33) && (marks >= 80)) {
+     console.log("pass");
+     console.log("A+");
+ }
+
+---------------------------------------------------
+//Logical OR
+  
+if((marks >= 33) || (marks >= 80)) {
+     console.log("pass");
+     console.log("A+");
+  
+------------------------------------------
+//Good string or not Q
+    
+let str = "apples";
+
+if((str.length >= 3) && (str[0] === "a")) {
+    console.log("Good string");
+} else {
+    console.log('Bad String');
+}
+  
+------------------------------------------------
+
+    //EX
+let num = 12;
+if((num%3 == 0) && (num-1 == 11) || (num+1 == 15)) {
+    console.log("safe");
+} else {
+    console.log("not safe");
+}
+  
+--------------------------------------------------
+
+    
+ 
 
   
