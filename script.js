@@ -209,8 +209,262 @@ if((num%3 == 0) && (num-1 == 11) || (num+1 == 15)) {
 }
   
 --------------------------------------------------
+//Truthy value
 
+if(" ") {
+    console.log("it has true value");
+} else {
+    console.log("it has false value");
+}
+----------------------------------------------------
+
+  //Falsy value
+
+if("") {
+    console.log("it has flase value");
+} else {
+    console.log("it has true value")
+}
+
+--------------------------------------------------
+
+  //TRUE 
+
+if(true) {
+    console.log("it has flase value");
+} else {
+    console.log("it has true value")
+}
+--------------------------------------------------
+
+  //Flase
+
+if(false) {
+    console.log("it has flase value");
+} else {
+    console.log("it has true value")
+}
+--------------------------------------------------
+  
+   //EX2
+let stringgg = " "
+if(stringgg) {
+    console.log("The string is not empty");
+} else {
+    console.log("The string is empty")
+} 
+----------------------------------------------------
+
+  //ex3
+let num = 0;
+if(num) {
+    console.log("num is not equal to zero");
+} else {
+    console.log("num is equal to zero")
+}
+----------------------------------------------------------
+  
+//SWITCH STATEMENT
+
+let color = "green";
+
+switch(color) {
+    case "red":
+        console.log("Stop");
+        break;
+    case "green":
+        console.log("go");
+        break;
+    case "yellow":
+        console.log("wait");
+        break;
+    default:
+        console.log("light is broken");            
+}
+------------------------------------------------------------
+
+let value = "1";
+
+switch(value) {
+    case "1":
+        console.log("monday");
+        break;
+    case "2":
+        console.log("tueday");
+        break;
+    case "3":
+        console.log("wednesday");
+        break;
+    case "4":
+        console.log("thurday");
+        break;
+    case "5":
+        console.log("friday");
+        break;
+    case "6":
+        console.log("saturday");
+        break;
+    case "7":
+        console.log("sunday");
+        break;
+    default:
+        console.log("NO day");
+}
+-------------------------------------------
+
+  //Months in quarter
+let quarter = 4;
+
+switch(quarter) {
+    case 1:
+        console.log("jan, feb, mar ");
+        break;
+    case 2:
+        console.log("apr, may, june");    
+        break;
+    case 3:
+        console.log("July, aug, sep");
+        break;
+    case 4:
+        console.log("Oct, nov , dec");
+        break;
+    default:
+        console.log("Not a quarter");            
+}
+------------------------------------------------
+
+  //LOG ERROR AND WARN MESSAGES
+
+console.log("This is a normal log msg");
+console.error("This is a error msg");
+console.warn ("This is a warning msg");
+
+----------------------------------------------------
+  
+  //alert n prompt
+  
+//Prompt
+
+let firstName = prompt("Enter your first name");
+let lastName = prompt("Enter your last name");
+console.log(`Welcome, ${firstName} ${lastName}`);
+  
+------------------------------------------------------
+  
+  //Alert
+  
+  let firstName = prompt("Enter your first name");
+let lastName = prompt("Enter your last name");
+let msg = `Welcome, ${firstName} ${lastName}`;
+alert(msg);
+  
+  --------------------------------------------------
     
- 
+  // PROBLEMS num div by 10
+n = 50
+
+if(n%10 == 0) {
+    console.log("Good string");
+} else {
+    console.log("bad string");
+}
+  
+---------------------------------------------------
+  
+//prob 2 name and age
+  
+let userName = prompt("Enter your name");
+let age = prompt("Enter your age");
+
+alert(`${userName} is ${age} years old`);
+  
+--------------------------------------------------
+
+  let Str = "arecanut";
+
+if((Str[0] == "A") || (Str[0] == "a") && (Str.length>5)) {
+    console.log("Golden string");
+} else {
+    console.log("Not a Golden string");
+}
+
+  ----------------------------------------------------------
+    
+// greatest of 3 nums
+    
+let num1 = 45;
+let num2 = 588;
+let num3 = 62;
+
+if(num1>num2) {
+    if(num1>num3) {
+        console.log(`${num1} is greater`);
+    } else {
+        console.log(`${num3} is greater`);
+    }
+} else {
+    if(num2>num3) {
+        console.log(`${num2} is greater`);
+    } else {
+        console.log(`${num3} is greater`);
+    }
+}
+
+------------------------------------------------
+
+  // Q - check if last digit of two num is same or not
+let num1 = 3242522;
+let num2 = 47852;
+
+if(num1%10 == num2%10) {
+    console.log("num1 and num2 have same last digit");
+} else {
+    console.log("last digits are different");
+}
+------------------------------------------------------------
+
+  //TEMPLATE LIERALS
+  
+let pencilPrice = 10;
+let eraserPrice = 5;
+console.log(`Total price is: ${pencilPrice + eraserPrice}rs`);
+------------------------------------------------------------------
+
+                                           //       --STRING METHODS--
+--------------------------------------------------------------------------------------------------------------------
+
+//Trim method
+  
+let msg = '   Hello   ';
+console.log(msg.trim());
+//note: it doesnt change the actal value of the string msg
+//it just returns a new one
+console.log(msg);
+
+let newMsg = '  He  llo   ';
+console.log(newMsg);
+console.log(newMsg.trim()); // trims only the start n end and not in the middle
+--------------------------------------------------------------------------------------
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
