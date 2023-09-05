@@ -445,10 +445,190 @@ let newMsg = '  He  llo   ';
 console.log(newMsg);
 console.log(newMsg.trim()); // trims only the start n end and not in the middle
 --------------------------------------------------------------------------------------
+  //trim ex of pw
+let password = prompt("Enter your password");
+let newPassword = password.trim();
+console.log(password);
+console.log(newPassword);
+//o/p if pw is '  jkask  ' it trims it an assign to new pw
+
+------------------------------------------------------------------
+  //toUpperCase
+let name = "Nammu";
+str=name.toUpperCase() //it will convert all the letters in string into uppercase and return a new string
+console.log(str);
+--------------------------------------------------------------------------------------------------------------
+  //toLowerCase
+let name = "NAMMU";
+str=name.toLowerCase();//it will convert all the letter in string into lowercase and returns a new string
+console.log(str);
+------------------------------------------------------------------------------------------------------------
+
+//Method chaining
+let msg = '   Hello   ';
+console.log(msg.trim().toUpperCase());
+---------------------------------------------
+//slice
+let name = "Narmada Gogineni";
+console.log(name.slice(-1));
+console.log(name.slice(-3));
+console.log(name.slice(4));
+console.log(name.slice(3,8));
+  ------------------------------------
+//Replace
+    
+let msg = "hi this is my laptop";
+console.log(msg);
+console.log(msg.replace("my", "your"));
+
+let word = "whatever";
+console.log(word);
+console.log(word.replace("e", "o"));
+---------------------------------------------
+  //ex1 - replace
+let msg = "college";
+console.log(msg);
+console.log(msg.replace("l", "t").replace("l", "t"));
+  -----------------------------------------------------
+//Repeat
+let fruit = "mango ";
+console.log(fruit.repeat(3));
+
+  ------------------------------------------------
+    //practice
+let msg = "       help!";
+console.log(msg.trim().toUpperCase());
+-------------------------------------------
+//ARRAYS
+
+let arr = ["Nammu", 1, 9.6];
+console.log(arr[0]);
+console.log(arr[0][0]);
+
+console.log(arr.length);
+console.log(arr[0].length);
+----------------------------------------
+  //Arrays are mutable
+
+let fruits = ["mango", "banana", "custard apple"];
+console.log(fruits);
+fruits[0] = "orange";
+console.log(fruits);
+-------------------------------------------------------
+  ARRAY METHODS
+
+//push
+let cars = ["bmw", "porshe", "mercedes"];
+(cars.push("tata")); 
+console.log(cars); 
+------------------------------------------------
+//pop
+(cars.pop());
+console.log(cars);
+
+(cars.pop(2));
+console.log(cars);
+-------------------------------------------------------
+
+//Unshift
+veggies = ["brinjal", "Onion", "chillies", "potato"];
+(veggies.unshift(-4,-8));
+console.log(veggies);
+-----------------------------------------------------
+//shift
+(veggies.shift());
+console.log(veggies);
+---------------------------------
+  //Ex
+  
+let followers = ["a", "b", "c"];
+let blocked = followers.shift(); 
+console.log(followers);
+console.log(blocked);
+-------------------------------------
+  //ex prob
+let months = ["jan", "july", "mar", "aug"];
+//req o/p is ["july", "jjune", "mar", "aug"]
+months.shift();
+months.shift();
+console.log(months);
+months.unshift("june");
+months.unshift("july");
+console.log(months);
+----------------------------------------------
+  //IndexOf
+
+let colors = ["red", "blue", "green"];
+console.log(colors.indexOf("green"));
+console.log(colors.indexOf("pink"));
+//returns -1 which means pink is not present
+--------------------------------------------------
+//includes
+
+console.log(colors.includes("red"));
+console.log(colors.includes("pink"));
+
+---------------------------------------------------
+  //Concat
+
+let primColors = ['red', 'blue', 'green'];
+let secColors = ['pink', 'yellow', 'white'];
+let allColors =(primColors.concat(secColors));
+console.log(allColors);
+---------------------------------------------------
+
+//Reverse 
+let names = ["nammu", "hemu", "sam", "anu"];
+let reversedArray = names.reverse();
+console.log(reversedArray);
+------------------------------------------------
+  //slice method
+  
+let colors = ["red", "blue", "green", "yellow", "saffron", "white", "black", "cyan", "grey"];
+console.log(colors.slice(4));
+console.log(colors.slice());
+console.log(colors.slice(-2));
+console.log(colors.slice(2, 5));
+--------------------------------------------------------------------------------------------------
+  
+//SPLICE Method
+let items = ["apple", "ball", "cup", "doll", "egg", "fan", "gloves", "hat", "ice", "jug"];
+
+//to add 2 elemts at index 3 without deleting any elmt
+console.log(items.splice(3, 0, "carrot", "carrom"));
+console.log(items);
+
+//all items from index 7 are deleted
+console.log(items.splice(7)); //elements from index4 are spliced and 6 elmnts(till index5) are reamined in array
+console.log(items); // only 6 items till 5 index are remaining and are printed
+
+//to delete 2 elemt in array from start (0 index)
+items.splice(0, 2);
+console.log(items);
+
+//to delete elmt at index 2 and add 3 elmnts
+items.splice(2, 1, "item1", "item2", "item3");
+console.log(items);
+
+------------------------------------------------------------------------------------------------------------------------
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
-
-
 
 
 
