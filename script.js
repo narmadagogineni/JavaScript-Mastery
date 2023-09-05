@@ -611,11 +611,153 @@ items.splice(2, 1, "item1", "item2", "item3");
 console.log(items);
 
 ------------------------------------------------------------------------------------------------------------------------
-    
+  //Sort 
+let alphabets = ["d", "e", "x", "s" , "k"];
+newArr = alphabets.sort();
+console.log(newArr);
+
+//note: nums are sorted differently 
+--------------------------------------------------
+  //ex
+let arr = ["jan", "july", "mar", "aug"];
+console.log(arr.splice(0, 2, "july", "june"));
+console.log(arr);
+--------------------------------------------------
+  
+//ex
+let lang = ["c", "c++", "html", "js", "python", "java", "c#", "sql"];
+store = lang.reverse();
+console.log(store);
+console.log(store.indexOf("js"));
+//or
+console.log(lang.reverse().indexOf("js"));
+-------------------------------------------------------------------------
+  //Array references
+  
+let arr = [1, 2,3];
+console.log(arr);
+let arrCopy = arr;
+console.log(arrCopy);
 
 
+address are compared not the values so arrays are not same
+let arr1 = [1, 2, 3];
+let arr2 = [1, 2, 3];
 
+if(arr1 == arr2) {
+    console.log("same");
+} else {
+    console.log("not same");
+}
+-----------------------------------------------------------------------
+  //const array
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr);
 
+// here const array values can be changed but not its refrence so its const array
+-----------------------------------------------------------------------------------
+ //NESTED ARRAY [ARRAY OF ARRAYS] 
+let arry = [[1, 2], [3, 4], [5, 6, 7]];  
+console.log(arry);
+console.log(arry[0][0]);
+console.log(arry.length);
+console.log(arry[0].length);
+console.log(arry[2].length);
+-------------------------------------------------
+  
+//tic tac toe game state
+
+let game = [["X", null, "O"], [null, "X", null], ["O", null, "X"]];
+console.log(game);
+
+// target a position 
+game[0][1] = "O";
+console.log(game);
+-------------------------------------------------------------------------
+  //ex prob
+
+let arr = [7, 9, 0, -2];
+let n = 3;
+
+let ans = arr.slice(0, n);
+console.log(ans);
+-------------------------------
+  //ex 2
+let arr = [7, 9, 0, -2];
+let n = 3;
+
+let ans = arr.slice(-3);
+console.log(ans);
+-------------------------------------
+  
+let str = "";
+
+if(str.length == 0) {
+    console.log("empty");
+} else {
+    console.log("not emppty");
+}
+
+//or
+
+let str = prompt("enter a string");
+if(str.length == 0) {
+    console.log("empty");
+} else {
+    console.log("not empty");
+}
+---------------------------------------
+  //Character at index 3 is lower case or not
+let str = "NarMaDa GogiNeni";
+let idx = 3;
+
+if(str[idx] == str[idx].toLowerCase()) {
+    console.log("lower case");
+} else {
+    console.log("not lower case");
+}
+-------------------------------------------------
+  // to check whole string is upper or lower
+let str = "narmada gogineni";
+
+if(str == str.toLowerCase()) {
+    console.log("lower case");
+} else {
+    console.log("not lower case");
+}
+--------------------------------------------------
+  //Trim ex
+let str = prompt("enter a string");
+
+let originalStr = str;
+let newStr = (str.trim());
+console.log(originalStr);
+console.log(newStr);
+-------------------------------------------
+
+//element present in arr or not
+  
+let arr = [1, 2, 3, 4, 5];
+
+if(arr.includes(2)) {
+    console.log("present");
+} else {
+    console.log("absent");
+}
+
+or
+
+let arr = [2, 65, 78, 2, -5, -34];
+let elmt = -5;
+
+if(arr.indexOf(elmt) == -1) {
+    console.log("absent");
+} else {
+    console.log("present");
+}
+
+--------------------------------------------
 
 
 
