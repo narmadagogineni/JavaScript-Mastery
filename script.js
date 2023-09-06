@@ -759,17 +759,91 @@ if(arr.indexOf(elmt) == -1) {
 
 --------------------------------------------
 
+                  //LOOPS
+  
+for(let i=1; i<=5; i++) {
+    console.log(i);
+}
+---------------------------------------------------
+//backwards
+  
+for(i=5; i>=1; i--) {
+    console.log(i);
+}
+-------------------------------------------------
+  for(i=1; i<=10; i=i+3) {
+    console.log(i);
+}
+----------------------------------------------
+  //BACKWARDS
 
+  for(i=10; i>=1; i=i-2) {
+    console.log(i);
+}
+------------------------------------------
+  //odd num
+for(i=1; i<=15; i++) {
+    if(i%2!=0) {
+        console.log(i);
+    }
+}
+//or
+  
+for(i=1; i<=15; i=i+2) {
+    console.log(i);
+}
+-----------------------------------------
+  //backwards ODD NUM
+  
+for(i=15; i>=1; i=i-2) {
+    console.log(i);
+}
+----------------------------
+  //even num 
+for(i=1; i<=15; i++) {
+    if(i%2==0) {
+        console.log(i);
+    }
+}
+//or
+for(i=2; i<=15; i=i+2) {
+    console.log(i);
+}
+--------------------------------------
+//backwrds
+  
+for(i=14; i>=2; i=i-2) {
+    console.log(i);
+}
+-----------------------------------
+  //even odd
+for(i=1; i<=20; i++) {
+    if(i%2==0) {
+        console.log(`${i} is even`);
+    } else if(i%2!=0) {
+        console.log(`${i} is odd`);
+    }
+}
+--------------------------------------------
+  //multiplication table
+  
+for(i=5; i<=50; i=i+5) {
+    console.log(i);
+}
 
+let n = 10;
+for(let i=n; i<=n*10; i=i+n) {
+    console.log(i)
+}
+//or
+  
+let n = prompt("enter a num");
+n = parseInt(n);
 
-
-
-
-
-
-
-
-
+for(i=n; i<=n*10; i=i+n) {
+    console.log(i);
+}
+----------------------------------------
   
 
 
