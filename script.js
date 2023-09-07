@@ -759,7 +759,9 @@ if(arr.indexOf(elmt) == -1) {
 
 --------------------------------------------
 
-                  //LOOPS
+                       //LOOPS
+
+                    //FOR LOOPS
   
 for(let i=1; i<=5; i++) {
     console.log(i);
@@ -844,7 +846,70 @@ for(i=n; i<=n*10; i=i+n) {
     console.log(i);
 }
 ----------------------------------------
-  
+  // Nested for loop
+
+for(i=1; i<=3; i++) {
+    console.log("outer loop")
+    for(j=1; j<=3; j++) {
+        console.log(j); 
+    }
+}
+-------------------------------------
+                                     //WHILE LOOP
+
+let i = 1;  //initialize
+while(i<=5) {  //condition
+    console.log(i);
+    i++;  //increment
+}
+---------------
+//backwards
+let i=5;
+while(i>=1) {
+    console.log(i);
+    i--;
+}
+----------------------------------------------
+// nums from 0 to 20
+let j = 0;
+while(j<=20) {
+    console.log(j);
+    j++;
+}
+-----------------------------------------
+// print even no.s
+let i = 2;
+while(i<=10) {
+    console.log(i);
+    i= i+2;
+}
+---------
+//backwards even no
+let i=10;
+while(i>=2) {
+    console.log(i);
+    i=i-2;
+}
+----------------------------------------------
+//odd nums
+let i=1;
+while(i<=10) {
+    console.log(i);
+    i=i+2;
+}
+----------------
+//Backwards off no
+let i = 9;
+while(i>=1) {
+    console.log(i);
+    i= i-2;
+}
+----------------------------------------------
+
+
+
+
+
 
 
 
