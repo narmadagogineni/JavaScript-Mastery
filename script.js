@@ -905,9 +905,24 @@ while(i>=1) {
     i= i-2;
 }
 ----------------------------------------------
+//fav movie task
 
+  const favMovie = "avatar";
+let guess = prompt("Guess my Favorite movie: ");
 
+while(guess != favMovie) {
+    if(guess == "quit") {
+        console.log("You Quit");
+        break;
+    }
+    guess = prompt("Wrong guess! Please Try again.");
+}
 
+if(guess == favMovie) {
+    console.log("Congrats! You guessed it right!");
+}
+-----------------------------------------------------------
+  
 
 
 
