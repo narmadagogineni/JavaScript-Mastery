@@ -922,7 +922,104 @@ if(guess == favMovie) {
     console.log("Congrats! You guessed it right!");
 }
 -----------------------------------------------------------
+ // loop on arrays
   
+  let fruits = ["mango", "apple", "litchi", "orange", "pineapple"];
+
+for(let i=0; i<fruits.length; i++) {
+    console.log(i, fruits[i]);
+}
+------------------------------------------------------------------------------
+//even 
+  
+let fruits = ["mango", "apple", "litchi", "orange", "pineapple"];
+fruits.push("custard apple", "chikku");
+// console.log(fruits);
+for(let i=0; i<fruits.length; i=i+2) {
+    console.log(i, fruits[i]);
+}
+
+-------------------------
+//backwards
+let fruits = ["mango", "apple", "litchi", "orange", "pineapple", "custard apple", "chikku"];
+for(let i=fruits.length-1; i>=0; i=i-2) {
+    console.log(i, fruits[i]);
+}
+
+  ----------------------------------------------------------------------------------
+//odd
+let fruits = ["mango", "apple", "litchi", "orange", "pineapple", "custard apple", "chikku"];
+for(let i=1; i<fruits.length; i=i+2) {
+    console.log(i, fruits[i]);
+}
+
+--------------------------
+//backwards
+let fruits = ["mango", "apple", "litchi", "orange", "pineapple", "custard apple"];
+for(let i=fruits.length-1; i>=1; i=i-2) {
+    console.log(i, fruits[i]);
+}
+-------------------------------------------------------------------------------------
+// NESTED LOOPS WITH NESTED ARRAYS
+  
+// ex 1
+let heroes = [
+    ["Prabhas", "Mahesh", "Ram"],
+    ["srk", "ameer khan", "salman khan"]
+];
+
+for(let i=0; i<heroes.length; i++) {
+    console.log(i,heroes[i], heroes[i].length );
+    for(j=0; j<heroes[i].length; j++) {
+        console.log(j, heroes[i][j]);
+    }
+}
+--------------------------
+//ex 2
+let students = [
+    ["nammu", 21],
+    ["hemu", 23],
+    ["rekha", 30]
+];
+
+for(let i=0; i<students.length; i++) {
+    console.log(i, students[i], students[i].length);
+    for(let j=0; j<students[i].length; j++) {
+        console.log(j, students[i][j]);
+    }
+}
+----------------------------------------------------------------------------------
+//FOR OF LOOPS
+  
+//it can be applied to both string and arrays
+let fruits = ["mango", "banana", "orange", "grapes", "avacado", "pineapple"];
+
+for(let fruit of fruits) {
+    console.log(fruit);
+}
+------------------------------------------
+//ex 2
+let string = "Bengaluru";
+
+for(let char of string) {
+    console.log(char);
+}
+========================================================================
+  
+//NESTED FOR OF LOOP
+  
+let lists = [
+    ["hemanth", "prasbhas", "mahesh"],
+    ["nammu", "kajal", "sam"]
+];
+
+for(let list of lists) {
+    // console.log(list);
+    for(let name of list) {
+        console.log(name);
+    }
+}
+================================================================
 
 
 
