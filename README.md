@@ -1,6 +1,6 @@
 # JavaScript-Mastery
 
-SCRIPT.JS Inlcudes all codes and concpets I worte while learning Thoery with Practice.
+SCRIPT.JS Inlcudes ALL THE CODES and concpets I COVERED while learning Thoery with Practice.
 
 FAVORITE MOVIE.JS includes a task 1 done by me during the parctice of JS.
 
