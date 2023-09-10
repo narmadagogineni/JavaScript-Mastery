@@ -1054,6 +1054,205 @@ while(true) {
 
 }
 ======================================================================
+//JS program to delete all occurrences of element ‘num’ in a given array.
+//if arr = [1, 2, 3, 4, 5, 6, 2, 3] & num = 2
+//Result arr = [1, 3, 4, 5, 6, 3]
+
+let arr = [1, 2, 3, 4, 5, 6, 2, 3];
+num = 2;
+
+for(i=0; i<arr.length; i++) {
+    if(arr[i] == num) {
+        arr.splice(i, 1);
+    }
+}
+console.log(arr);
+-----------------------------------------------------------------------------
+// total no of digits in a number.
+// Example : if number = 287152, count = 6
+
+let num = 287152;
+let number = num.toString();
+let count = 0;
+
+for(let i=0; i<number.length; i++) {
+    if(i>=0){
+        count++;
+    }
+}
+console.log(count);
+---------------------------------------------------
+//sum of digits of a num;
+let number = 287152;
+let sum = 0;
+
+while(number>0) {
+    sum+=number % 10
+    number = Math.floor(number/10);
+}
+console.log(sum);
+-------------------------------------------------
+//factorial of a num
+let n = 5;
+fact = 1;
+
+for(let i=1; i<=n; i++) {
+    fact= fact * i
+}
+console.log(fact);
+------------------------------------------------
+// largest num in array
+let arr = [28, 4, 15, 9, 3, 75, 23];
+let largest = 0;
+
+for(let i=0; i<arr.length; i++) {
+    if(largest<arr[i]) {
+        largest = arr[i];
+    }
+}
+console.log(largest);
+------------------------------------------
+// OBJECT LITERALS
+// SYNTAX
+let student = {
+    name : "Narmada",
+    age : 21,
+    marks : 96,
+    place : Bangalore
+};
+------------------------------------------------
+//arrys can be stored in obj literals ex
+let item = {
+    price : "50.60 paisa",
+    quatity : "500g",
+    color : ["pink", "green", "red"],
+};
+--------------------------------------
+let post = {
+    username : "@narmadagogineni",
+    based : "Bharat",
+    content : "This is my first post",
+    likes : 150,
+    reposts : 10,
+    tags : ["@alpha", "@delta"]
+}
+
+console.log(post.content);
+console.log(post.likes);
+//or
+console.log(post["likes"]);
+
+//NOTE : tags and 5 together is called as property
+//to access property we can use dot oparator as above insr=tead we use
+let propertyy = "reposts";
+console.log(post[propertyy]);
+------------------------------------------------------------------------------
+//COVERSION IN GET VALUES
+let obj = {
+    1 : "a",
+    2 : "b",
+    null : "c",
+    undefined : "d",
+    true : "e"
+}
+
+console.log(obj.null);
+//console.log(obj."1"); //error
+console.log(obj[1]); //no error
+console.log(obj.true);
+console.log(obj.undefined);
+---------------------------------------------------------------------
+//add / update / delete object literals
+
+let employee = {
+    name : "Narmada",
+    city : "bengaluru",
+    // nationality : "indian",
+    
+};
+---------------------
+//to update 
+console.log(employee.marks);
+console.log(employee.marks = 100);  //marks updated to 100
+console.log(employee);
+-----------------------
+//to add
+employee.gender = "female";
+employee.age = "21";
+console.log(employee);
+-----------------
+//to delete
+delete employee.age;
+console.log(employee);
+----------------------------------------------------------------
+//OBJECT OF OBJECTS
+let classInfo = {
+    nammu : {
+        age : 21,
+        marks : 90
+    },
+    hemu : {
+        age : 23,
+        marks : 97
+    },
+    somu : {
+        age : 53,
+        marks : 99
+    }
+};
+console.log(classInfo);
+console.log(classInfo.somu)
+console.log(classInfo.hemu)
+console.log(classInfo.nammu)
+console.log(classInfo.hemu.age);
+console.log(classInfo.nammu.marks);
+---------------------------------------
+//ARRAY OF OBJECTS
+const classInfo = [
+    {
+        name : "nammu",
+        grade : "A+",
+        city : "bangalore"
+    },
+    {
+        name : "hemu",
+        grade : "O",
+        city: "bangalore"
+    },
+    {
+        name : "ramu",
+        garde : "A",
+        city : "Hyd"
+    }
+];
+console.log(classInfo);
+console.log(classInfo[0].name);
+console.log(classInfo[2].city);
+--------------------------------------------------
+//MATH OBJ
+//RANDOM NUMBER
+  //syntax
+let num = Math.floor(Math.random() * 10 ) + 1;
+console.log(num);
+-------------------------------------------------
+//ex1
+let num = Math.floor(Math.random() * 100) + 1;
+console.log(num);
+---------------------------------------------------
+//ex2
+let num = Math.floor(Math.random() * 5) + 1;
+console.log(num);
+-----------------------------------------------------
+//ex3 TO GENERATE FROM 20 TO 24
+let num = Math.floor(Math.random() * 5 ) + 20;
+console.log(num);
+---------------------------------------------------
+//ex4 TO GENERATE FROM 21 TO 25
+let num = Math.floor(Math.random() * 5 ) + 21;
+console.log(num);
+-----------------------------------------------
+
+
 
 
 
