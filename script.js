@@ -1278,7 +1278,133 @@ while(true) {
 }
 --------------------------------------------------------------------------------
 
+//DICE ROLL 1-6 NUMS
 
+let diceRoll = Math.floor(Math.random() * 6) + 1;
+console.log(diceRoll);
+-----------------------------------------------
+// object literal
+let car = {
+    name : "porshe",
+    model : "g12",
+    color : "black"
+}
+
+console.log(car.name);
+----------------------------------------------
+//ex 2
+let person = {
+    name :"nammu",
+    age: 21,
+    city: "New Jersey"
+}
+person.city = "New York";
+console.log(person.city);
+person.country = "United States";
+console.log(person);
+--------------------------------------------
+//FUNCTION
+function hello() {
+    console.log("Hello, This is James! welcome to my coding area. Hope you like it..");
+    console.log("Keep Exploring! Keep Learning");
+}
+
+hello();
+--------------------------------------------------------------------------------------------
+//ex 2
+function printName() {
+    console.log("My name is Narmada Gogineni");
+    console.log("My age is 21");
+    console.log("Im a coder and Porgrammer");
+}
+
+printName();
+------------------------------------------------------
+//loops in func
+function toPrintNum() {
+    for(let i=1; i<=10; i++) {
+        console.log(i);
+    }
+};
+toPrintNum();
+--------------------------------------------
+//if else in function
+function isAdult() {
+    let age = 21;
+    if(age >= 18) {
+        console.log("Adult");
+    } else {
+        console.log("Not an adult");
+    }
+};
+---------------------------------------------------------------
+// ex2
+function poem() {
+    console.log("Twinkle twnikle, little star,");
+    console.log("How I wonder what you are");
+    console.log("Up above the sky so high");
+    console.log("Like a diamond in the sky");
+}
+
+poem();
+-------------------------------------------------------
+//ex3 dice roll
+function dice() {
+    let rand = Math.floor(Math.random() * 6) + 1;
+    console.log(rand);
+};
+
+dice();
+-----------------------------------------------------
+//functions with arguments
+function printName(name) {
+    console.log("Welcome", name);
+};
+
+printName("Narmada");
+----------------------------------------------
+//ex 2
+function printInfo(name, age) {
+    console.log(`${name}'s age is ${age}`);
+};
+printInfo("Narmada", 21);
+-----------------------------------------------
+//missing arguments
+printInfo("Hemanth");
+-------------------------------
+//sum of two num
+function sum(a, b) {
+    return a+b;
+}
+console.log(sum(2, 6));
+//or---------
+function sum1(a, b) {
+    console.log(a+b);
+};
+sum1(3, 6);
+-----------------------------------
+//avg of 3 num
+function avg(a, b, c) {
+    console.log((a+b+c)/3);
+};
+avg(3, 6, 9);
+
+//or ------------
+
+function calcAvg(a, b, c) {
+    let avg = (a+b+c)/3;
+    console.log(avg);
+};
+calcAvg(2,6,4);
+------------------------------------------
+  //print Table
+function printTable(n) {
+    for(let i=n; i<=n*10; i=i+n) {
+       console.log(i);
+    }
+};
+printTable(4);
+-------------------------------------------
 
 
 
