@@ -1405,6 +1405,267 @@ function printTable(n) {
 };
 printTable(4);
 -------------------------------------------
+----//RETURN KEYWORD----------
+
+//sum of two num
+function sum(a, b) {
+    return a+b;
+}
+console.log(sum(2, 6));
+//or
+let s = sum(2, 6);
+console.log(s);
+---------------------------------------------------
+//sum of 3 num using return
+function sum_three(a, b) {
+    return a+b;
+};
+let s1 = sum(sum(1,2),3);
+console.log(s1);
+-------------------------------------
+//sum of 3 without return
+function sum3() {
+    console.log(a+b);
+};
+let s2 = sum(sum(1, 2), 6);
+console.log(s2);
+-------------------------------------------------------------
+//ANYTHING written after RETURN keyword will NOT be excuted
+// ex1
+function calc() {
+    console.log(a+b);
+    console.log(a-b);
+    return a*b;
+    console.log(a/b); //not be executed 
+}
+-------------------------------------------------
+// ex2
+function adult(age) {
+    if(age>=18) {
+        return ("adult");
+    } else {
+        return ("not an adult");
+    }
+    console.log("bye"); //doesnt gets executed
+};
+
+console.log(adult(15));
+--------------------------------------------------
+//return the sum of n naural numbers
+function naturalNum(n) {
+    let sum=0;
+
+    for(let i=1; i<=n; i++) {
+        sum +=i;
+    }
+    return sum;
+}
+console.log(naturalNum(3));
+
+-------//or
+
+function getSum(m) {
+    let sum = 0;
+
+    for(let i=0; i<=m; i++) {
+        s = sum+=i;
+    }
+    return s;
+};
+console.log(getSum(4));
+console.log(getSum(4000));
+-------------------------------------------------
+//concatenation of strings in an array
+
+let str = ["hello", "hi", "bye", "bye"];
+
+function concat(str) {
+    let result = "";
+
+    for(let i=0; i<=str.length; i++) {
+        result += str[i];
+    }
+
+    return result;
+};
+
+console.log(concat(str));
+------------------------------------------------------
+--------SCOPE--------------
+
+//functional scope
+function calSum(a, b) {
+    let sum = a+b;
+    console.log(sum);       //prints the sum since its called inside the function
+};
+
+calSum(2, 4);
+//console.log(sum);        //sum doesn't gets printed if called outisde the function 
+----------------------------------------------------------------------------------------
+//global scope
+let sum = 50;                //global variable
+function calSum(a,b) {
+    let sum = a+b;          //functiona; variable
+    console.log(sum);       //prints a+b value due to func scope
+};
+calSum(4, 6);
+console.log(sum);           //prints 50 due to global scope
+
+---------------------------------------------------------------------------------
+//global scope
+let sum = 50;                //global variable
+function calSum(a,b) {
+    // let sum = a+b;          //if functional scope variable is not defined it prints global variable
+    console.log(sum);       //prints a+b value due to func scope
+};
+calSum(4, 6);
+console.log(sum);           //prints 50 due to global scope
+--------------------------------------------------------------------
+// Block scope
+{
+    let a = 5;
+    const b = 10;
+    var c = 15;
+}
+
+// console.log(a);    //error - a is undefined due to block scope {}
+// console.log(b);     // error - b is undefined due to bocl scope 
+console.log(c);         //prints c because var keyword doesn't have block scope 
+------------------------------------------------------------------------------------
+//ex 2
+for(let i=0; i<=10; i++) {
+    console.log(i);    //prints 0 - 10 
+};
+
+console.log(i);        //error- i not defined due to block scope
+----------------------------------------------------------------------
+//ex3 
+let age = 21;
+
+if(age>=18) {
+    let str = "adult";  //prints adult
+    console.log(str);
+};
+
+// console.log(str);    //error -  str undefined
+
+--------------------------------------------------------
+//lexical scope
+function outerFunc() {
+    let x = 5;
+    let y = 10;
+    function innerfunc() {
+        console.log(x);
+    }
+    // innerfunc();
+}
+
+--------------------------------------------------
+//case 2
+function outerFunc() {
+    let x = 5;
+    let y = 10;
+    function innerfunc() {
+        console.log(x);
+    }
+    innerfunc(); //accesible inside
+}
+
+// innerfunc(); //not accesible outside
+------------------------------------------------------
+
+//case 2
+function outerFunc() {
+    let x = 5;
+    let y = 10;
+    function innerfunc() {
+        let a = 2;
+        console.log(x);    //can access x from outerfunc but viceversa not possible
+        console.log(a);  //acessible by itself
+    }
+    innerfunc();
+    // console.log(a);    //a is not accesbile by outerfunc
+}
+------------------------------------------------------------------------------
+//case 3
+function outerFunc() {
+    let x = 5;
+    let y = 10;
+    console.log("hi")
+    function innerFunc() {
+        let a = 2;
+        console.log(x);    //can access x from outerfunc but viceversa not possible
+        console.log(a);    //acessible by itself
+    }
+    innerFunc();          //if commented out innerfunc doesnt get executed
+    // console.log(a);    //a is not accesbile by outerfunc
+}
+outerFunc();  
+---------------------------------------------------------------------------------------
+//guess the ouput
+let greet = "Hello!";             //global scope
+
+function changeGreet() {
+    let greet = "Namaste!";     //functional scope
+    console.log(greet);
+    function innerGreet() {
+        console.log(greet);      //lexiacl scope
+    }
+    // innerGreet();
+}
+
+console.log(greet);
+changeGreet();
+
+// o/p
+hello
+namaste
+namaste
+-----------------------------------------------------------------------
+// function expressions
+let name = "narmada";
+//similarly func is defined and stored in a variable
+let sum = function(a, b) {
+    return a+b;
+}
+s = sum(2, 4);
+console.log(s);
+-------------------------------------------------------
+//ex 2
+let hello = function() {
+    console.log("hello, welcome back");
+}
+
+hello();
+hello();
+-----------------------------------------------
+//hello func value can be updated
+hello = function() {
+    console.log("Namaste!");
+}
+
+hello();
+-----------------------------------------------
+//Higher order functions
+//cond 1 : takes one or more functions as an arguments
+// ex 
+function multipleGreet(func, n) {
+    for(let i=1; i<=n; i++) {
+        func();
+    }
+}
+
+let greet = function() {
+    console.log("Hello");
+}
+
+let greet2 = function() {
+    console.log("Namaste!");
+}
+
+multipleGreet(greet, 4);
+multipleGreet(greet2, 2);
+--------------------------------------------------
 
 
 
