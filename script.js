@@ -1666,8 +1666,516 @@ let greet2 = function() {
 multipleGreet(greet, 4);
 multipleGreet(greet2, 2);
 --------------------------------------------------
+//odd func
+
+let odd = function(n) {
+        console.log(n%2!=0);
+}
+
+odd(5);
+--------------------------------
+//even function
+
+let even = function(n) {
+    console.log(n%2==0);
+}
+
+even(80)
+---------------------------------------
+//higher order function
+//condition 2 : that returns a function
+
+function oddOrEvenTestFactory(request) {
+    if(request == "odd") {
+        return function(n) {
+            console.log(n%2 != 0);
+        }
+    } else if (request == "even") {
+        return function(n) {
+            console.log(n%2 == 0);
+        } 
+        } else {
+            console.log("wrong request");
+        }
+    }    
+
+//check
+let request = "odd";
+console.log(request);
+let f = oddOrEvenTestFactory(request);
+console.log(f);
+f(134679);
+f(1394);
+
+//check 2
+let request = "even";
+console.log(request);
+let f1 = oddOrEvenTestFactory(request);
+console.log(f1);
+f1(1346);
+f1(134679);
+------------------------------------------------
+
+// type 2
+function evenOddTest(req) {
+    if(req=="odd") {
+        let odd = function(n) {
+            console.log(n%2!=0);  
+        }
+
+        return odd;
+    } else if(req=="even") {
+        let even = function(n) {
+            console.log(n%2==0);
+        }
+
+        return even;
+    } else {
+        console.log("Wrong req");
+    }
+}
+
+//check 
+let req = "odd"; //even
+console.log(req);
+let func = evenOddTest(req);  
+console.log(func);
+func(3); 
+func(8); 
+
+//check 2
+let req = "even";
+console.log(req);
+let func2 = evenOddTest(req);
+console.log(func2);
+func2(6);
+func2(61);
+
+--------------------------------------------------------
+//Methods
+let calculator = {
+    num : 20,
+    add : function(a, b) {
+        return a+b;
+    },
+    sub : function(a, b) {
+        return a-b;
+    },
+    mul : function(a, b) {
+        return a*b;
+    }
+};
+
+console.log(calculator);
+console.log(calculator.num);
+console.log(calculator.add);
+console.log(calculator.add(2,5));
+console.log(calculator.sub(12,3));
+console.log(calculator.mul(20,5));
+-----------------------------------------------------------
+  
+//Shorthand of Methods
+const calculator = {
+    add(a, b) {
+        return a+b;
+    },
+    sub(a, b) {
+        return a-b;
+    },
+    mul(a, b) {
+        return a*b;
+    }
+};
+
+console.log(calculator);
+console.log(calculator.num);
+console.log(calculator.add);
+console.log(calculator.add(20,5));
+console.log(calculator.sub(12,3));
+console.log(calculator.mul(20,5));
+-------------------------------------------------------------------
+  
+//return all array element which are larger than a given num
+let num = 50;
+let arr = [45, 76, 3, 89, 35, 78, 24, 90, 88];
+function getLarger(arr, num) { 
+    for(let i=0; i<arr.length; i++) {
+        if(num<arr[i]) {
+            console.log(arr[i]);
+        }    
+    }
+}
+
+getLarger(arr, num);
+--------------------------------------------------------
+//largest country name in output
+let country = ["Bharat", "Usa", "uae", "peru"];
 
 
+function longestname(country) {
+    let ansIdx = 0;
+    for(let i=0; i<country.length; i++) {
+        let ansLen = country[ansIdx].length;
+        let currLen = country[i].length;
+        if(currLen > ansLen) {
+            ansIdx = i;
+        }
+    }
+    return country[ansIdx];
+    
+};
+
+console.log(longestname(country));
+------------------------------------------------------------
+//THIS keyword
+This method is used in objects and not in functuons
+
+let student = {
+    name : "Narmada",
+    age : 21,
+    eng : 99,
+    mat : 98,
+    sci : 97,
+    place : "New york",
+    calAvg() {
+        let avg = ((this.eng + this.mat + this.sci)/3)
+        console.log(avg);
+           console.log(`${name}'s avg marks is ${avg}`);
+    }
+    
+}
+student.calAvg();
+
+-------------------------------------------------------------------
+//WITHOUT this keyword
+//to do this we have to define functions and not objects
+function stud() {
+    let name = "nammu";
+    let age = 21;
+    let mat = 98;
+    let sci = 34;
+    function getAvg() {
+        let avg = (mat + sci) / 2;
+        console.log(avg);
+    }   
+    getAvg();
+};
+
+stud();
+------------------------------------------------------------------
+// to check this value
+let student = {
+    eng : 99,
+    mat : 98,
+    sci : 97,
+    calAvg() {
+        console.log(this);                  //check console - so basically here "this" is the student object and all the objects inside it
+        let avg = (this.eng + this.mat)/ 2;
+        console.log(avg);      
+    }   
+}
+student.calAvg();
+------------------------------------------------------------------
+  
+//to check this outside a method / or in a function
+function getAvg() {
+    console.log(this);       //here "this" is window object i.e when there is no object window is the default obj
+}
+getAvg();     
+------------------------------------------------------------------
+  
+//try and catch
+
+console.log("Hello");
+console.log("Hello");
+console.log(a);          //throws error
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+------------------------------------------------------------------
+//to solve the above error
+console.log("Hello");
+console.log("Hello");
+try {
+    console.log(a);
+} catch {
+    console.log("There is a error");
+}
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+------------------------------------------------------------------
+//to print the content of the error
+console.log("Hello");
+console.log("Hello");
+try {
+    console.log(a);
+} catch(e) {
+    console.log("There is a error");
+    console.log(e);
+}
+console.log("Hello");
+
+//error e can be written as e , err, error
+--------------------------------------------------------------------------------------------------
+//----------------MISCELLANEOUS FUNCTIONS---------------
+
+// //Arrow functions
+// const addNumbers =(num1, num2)=> num1+num2 ;   //arrow function with one parameter
+// console.log(addNumbers);
+
+// ex1
+let sum = (a, b) => {
+    console.log(a+b);
+};
+sum(2,5);
+--------------------------------------------------------------------------------------------------
+//ex2
+const cube = (n) => {
+    console.log(n*n*n);
+};
+cube(3);
+--------------------------------------------------------------------------------------------------
+//ex3
+const pow = (c, d) => {
+    console.log(c**d);
+};
+pow(4, 4);
+--------------------------------------------------------------------------------------------------
+//ex4
+let hello = () => {
+    console.log("Hello!");
+};
+hello();
+--------------------------------------------------------------------------------------------------
+//ex5 using return
+let power = (x, y) => {
+    return x**y
+};
+console.log(power(2, 4));
+--------------------------------------------------------------------------------------------------
+//Arrow functions - IMPLICIT RETURN
+
+// ex1
+let mul = (e, f) => (e*f);
+console.log(mul(60, 789));
+--------------------------------------------------------------------------------------------------
+//ex2
+let div = (i, j) => (
+    i/j
+);
+console.log(div(10, 2));
+--------------------------------------------------------------------------------------------------
+// ex3
+let sum = (a, b) => 
+    (a+b)
+console.log(sum(2,5));
+--------------------------------------------------------------------------------------------------
+//ex4
+const cube = (n) => (n*n*n);
+console.log(cube(3));
+--------------------------------------------------------------------------------------------------
+//ex5
+const pow = (c, d) => (c**d);
+console.log(pow(4, 4));
+--------------------------------------------------------------------------------------------------
+//ex6
+let hello = () => ("Hello!");    //not working same as above hello arrow func
+console.log(hello);         
+
+--------------------------------------------------------------------------------------------------
+//setTimeout function
+
+// ex1 
+console.log("Hi, There");
+
+setTimeout(() => {
+    console.log("Javascript Mastery");
+}, 4000);
+
+console.log("Welcome to");
+--------------------------------------------------------------------------------------------------
+//ex2 
+console.log("Hey");
+
+setTimeout(() => {hello}, 5000);
+
+console.log("Bye");    
+
+let hello = () => ("Hellow elcome to js");
+--------------------------------------------------------------------------------------------------
+
+// setInteval function
+console.log("Hi");
+setInterval( () => {
+    console.log("Javascript mastery");
+}, 2000);
+console.log("bye");
+
+to stop the executing after some time we use clearInterval
+--------------------------------------------------------------------------------------------------
+// clearInterval using ids
+console.log("Hi");
+let id1 = setInterval( () => {
+    console.log("Javascript mastery");
+}, 2000);
+console.log("hello");
+
+clearInterval(id1);
+
+console.log("bye");
+let id2 = setInterval( () => {
+    console.log("React now");
+}, 2000);
+console.log("bye again");
+
+clearInterval(id2);
+
+console.log(id1);
+console.log(id2);
+
+--------------------------------------------------------------------------------------------------
+
+//This with Arrow functions
+let marks = 78;
+const student = {
+    name : "Nammu",
+    marks : 96,
+    property : this,             //global scope --> window
+    getName : function () {
+        console.log(this);       //functional scope --> student
+        return this.name;
+    },
+    getMarks : () => {
+        console.log(this);       //arrow scope = parent scope, and parent scope is global scope --> window
+        return this.marks;
+    },
+};
+
+student;
+student.getName();
+console.log(student.getName());
+student.getMarks();         //this.marks gives undefined to get marks printed check next code
+console.log(student.getMarks());
+--------------------------------------------------------------------------------------------------
+//get marks printed
+let marks = 78;
+const student = {
+    name : "Nammu",
+    marks : 96,
+    property : this,             //global scope --> window
+    getName : function () {
+        console.log(this);       //functional scope --> student
+        return this.name;
+    },
+    getMarks : () => {
+        console.log(this);       //arrow scope = parent scope, and parent scope is global scope --> window
+        return marks;
+    },
+};
+
+student;
+student.getName();
+console.log(student.getName());
+student.getMarks();
+console.log(student.getMarks());
+--------------------------------------------------------------------------------------------------
+// case 2
+// arrow func = lexical scope - parent this is my this (the one who called me, their this is my this)
+// normal func - my this is my this (the one who called me is my this)
+
+const student = {
+    name : "Hemu",
+    marks : 98,
+    getInfo1 : function () {       //parent func of arrow func 
+        setTimeout(() => {         //arrow func
+            console.log(this)       //student - bcz my parent is func and func this is student so student is my this
+        }, 1000);
+    },
+    getInfo2 : function() {
+        setTimeout (function () {      //parent func
+            console.log(this);         //window - bcz setTimeout is a window inbuilt func
+        }, 1000);
+    },
+};
+--------------------------------------------------------------------------------------------------
+//practice Qs
+const square = (n) => (n*n);
+console.log(square(13));
+
+// Qs2 write a func that prints "hello world" 5 times at the interval of 2 sec each
+let id = setInterval(() => {
+    console.log("Hello world");
+}, 2000);
+
+setTimeout(() => {
+    clearInterval(id);
+    console.log("clear interval ran")
+}, 10000);
+
+--------------------------------------------------------------------------------------------------
+// ARRAY METHODS
+  
+// 1. forEach 
+
+// foreach for arrays
+
+// passing functionName
+
+let arr = [1, 2, 4, 6, 7, 8];
+
+let print = function(elmt) {
+    console.log(elmt);
+};
+arr.forEach(print);
+
+// or----
+
+// directly passing function definition
+
+arr.forEach(function(elmt) {
+    console.log(elmt);
+})
+
+// or----
+
+//arrow function
+
+arr.forEach((element) => {
+    console.log(element);
+});
+
+--------------------------------------------------------------------------------------------------
+// NOTE : forEach for objects of objects is not possible bcz these are array methods and not object methods
+--------------------------------------------------------------------------------------------------
+// //foreach of array of objects
+
+let student = [{
+    Name : "Nammu",
+    age : 21,
+},
+ {
+    Name : "Hemu",
+    age : 23,
+ },
+  {
+    Name : "Karan",
+    age : 25,
+  }];
+
+ student.forEach((element) => {
+    console.log(element);
+ });
+
+ student.forEach((element) => {
+    console.log(element.Name);
+ });
+
+ student.forEach((element) => {
+    console.log(element.age);
+ }); 
+--------------------------------------------------------------------------------------------------
 
 
 
