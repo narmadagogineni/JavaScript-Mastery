@@ -2176,7 +2176,485 @@ let student = [{
     console.log(element.age);
  }); 
 --------------------------------------------------------------------------------------------------
+//MAP 
 
+// ex1
+let num = [1, 2, 3, 4];
+
+let double = num.map((el) => {
+    return el * 2;
+});
+
+console.log(double);
+-------------------------------------------------------------------------------------------------------------------------
+// ex2
+let square = num.map((el) => {
+    return el*el;
+});
+console.log(square);
+
+const student = [
+    {
+        name : "Nammu",
+        marks : 98,
+    },
+    {
+        name : "Hemu",
+        marks : 89,
+    },
+    {
+        name : "jyo",
+        marks : 86,
+    }
+];
+
+let gpa = student.map((el) => {
+    return (el.marks/10);
+});
+
+console.log(gpa); 
+-------------------------------------------------------------------------------------------------------------------------
+//filter
+
+//ex filter even nums
+let nums = [2,3,4,5,6,8,9,1,2,31,45];
+let evens = nums.filter((el) => {
+    return el%2==0;    //true for even, false for odd
+});
+
+console.log(evens);
+-------------------------------------------------------------------------------------------------------------------------
+// ex2 filter odd nums
+let numbers = [2, 3, 4, 6, 7, 8, 9, 14, 9, 0, 7, 4, 3, 17, 2];
+let odds = numbers.filter((el)=> {
+    return el%2!=0;  //truw for odds, false for even
+});
+
+console.log(odds);
+-------------------------------------------------------------------------------------------------------------------------
+//ex3 filter values less than 5
+
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let values = nums.filter((el) => {
+    return el < 5;
+});
+
+console.log(values);
+-------------------------------------------------------------------------------------------------------------------------
+//EVERY 
+//returns true only if all elements satisfy the given condition
+// ex1 even 
+
+let num = [2, 4, 6, 8];
+num.every((el)=>(el%2==0));
+
+//   or syntax
+
+even = num.every((el) => {
+    return el%2==0;
+});
+
+console.log(even);
+-------------------------------------------------------------------------------------------------------------------------
+// ex2 odd 
+let nums = [1, 3, 5, 7];
+odd = nums.every((el) => {
+    return el%2!=0;
+});
+
+console.log(odd);
+-------------------------------------------------------------------------------------------------------------------------
+// ex3 
+let arr = [6, 7, 8, 9];
+array = arr.every((el) => {
+    return el > 5;
+})
+
+console.log(array);
+-------------------------------------------------------------------------------------------------------------------------
+//SOME
+
+//ex1
+
+let num = [ 3, 5, 7, 11, 9];
+
+arr = num.some((el) => {
+    return el%2!=0;
+});
+
+console.log(arr);
+-------------------------------------------------------------------------------------------------------------------------
+// ex2
+
+let num = [2, 4, 8, 6];
+greaterNum = num.some((el) => {
+    return el > 5;
+});
+
+console.log(greaterNum);
+
+-------------------------------------------------------------------------------------------------------------------------
+//Reduce - reduces an array to single value
+
+let arr = [1, 2, 3, 4];
+
+let newArr = arr.reduce((accumulator, element) => {
+    return accumulator + element;
+});
+
+console.log(newArr);
+-------------------------------------------------------------------------------------------------------------------------
+//cal sum of num in array
+let num = [1, 2 , 3, 4, 5, 6, 7, 8, 9, 10];
+
+let sum = num.reduce((res, el) => {
+    // console.log(res);
+    return res + el;
+});
+
+ console.log(sum);
+-------------------------------------------------------------------------------------------------------------------------
+//ex subtraction
+
+let num = [104, 12, 15, 17];
+
+let sub = num.reduce((res, el) => {
+    // console.log(res);
+    return res - el;
+});
+
+console.log(sub);
+
+-------------------------------------------------------------------------------------------------------------------------
+//ex to find max num using 1) loops and 2) reduce method
+
+// using loop
+let num = [1, 2, 3, 7, 9, 4, 12, 45, 8, 34];
+let max = -1    //or 0
+
+for(let i=0; i<num.length; i++) {
+    if(max<num[i]) {
+        max = num[i];
+    }
+}
+
+console.log(max);
+-------------------------------------------------------------------------------------------------------------------------
+//using reduce
+
+let arr = [1, 2, 3, 7, 9, 4, 12, 45, 8, 34];
+
+let result = arr.reduce((max, el) => {
+    if(max> el) {
+        return max;
+    } else {
+        return el;
+    }
+});
+
+console.log(result);
+
+-------------------------------------------------------------------------------------------------------------------------
+// practice Qs
+
+//check if all nums in array are multiples of 10 or not
+//all nums means every
+
+let arr = [60, 10, 20, 40, 50, 100];
+let muls = arr.every((el) => {
+    return el%10==0;
+});
+
+console.log(muls);
+-------------------------------------------------------------------------------------------------------------------------
+  
+//check min num in array
+let arr = [2, 3, 4, 7, 9, 1, 5];
+
+let min = arr.reduce((min, el) => {            //min as new array and min also as accumulator but no error bcz one is global scope other is func scope
+    if(min<el) {
+        return min;
+    } else {
+        return el;
+    };
+});
+
+console.log(min);
+
+// or-------
+
+//using combination of functions and reduce (array methods)
+
+function getMin(nums) {
+    let min = nums.reduce((min, el) => {
+        if(min<el) {
+            return min;
+        } else {
+            return el;
+        };
+    });
+    return min;
+};
+
+let nums = [2, 3, 5, -1, -23, 43, 67];
+console.log(getMin(nums));
+-------------------------------------------------------------------------------------------------------------------------
+//default parameter
+
+function sum(a, b=3) {
+    return a+b;
+};
+
+console.log(sum(2));
+-------------------------------------------------------------------------------------------------------------------------
+// Spread
+
+// ex -- to get min num
+console.log(Math.min(11, 2, 4, 6, 10));
+console.log(Math.min(11, 2, 4, 6, 10, 33, 56, 1, 7, 3, 9));
+
+-------------------------------------------------------------------------------------------------------------------------
+let arr = [23, 45, 3, 6, 2];
+console.log(Math.min(arr));  //gives NaN
+console.log(Math.min(arr[0], arr[1], arr[2], arr[3], arr[4])); //to solve this issue
+
+// we use spread (...arrayName) to solve this
+console.log(Math.min(...arr));
+-------------------------------------------------------------------------------------------------------------------------
+// ex2-- to get max 
+console.log(Math.max(...arr));
+-------------------------------------------------------------------------------------------------------------------------
+//ex3-- spread array
+
+let evenNum = [2, 4, 6, 8, 10, 12, 14, 16, 28];
+console.log(evenNum);
+
+console.log(2, 4, 6, 8, 10, 12, 14, 16, 28);
+
+//to spread evenNum array
+console.log(...evenNum);
+-------------------------------------------------------------------------------------------------------------------------
+  
+//ex4 -- to spread string
+
+let str = "Narmada Gogineni";
+console.log(...str);
+-------------------------------------------------------------------------------------------------------------------------
+
+// spread ARRAY LITERALS
+let arr = [1, 2, 3, 4, 5];
+let newArr = [...arr];
+console.log(newArr);
+
+let char = [..."hello"];
+console.log(char);
+
+let even = [2, 4, 6, 8];
+let odd = [1, 3, 5, 7, 9];
+
+let nums = [...odd, ...even];
+console.log(nums);
+-------------------------------------------------------------------------------------------------------------------------
+  
+//spread - OBJECT LITERALS
+
+const data = {
+    email : "ironman@gmail.com",
+    password : "abcd"
+};
+
+dataCopy = {...data};
+console.log(dataCopy);
+-------------------------------------------------------------------------------------------------------------------------
+  
+//can add few more properties
+
+const data = {
+    email : "ironman@gmail.com",
+    password : "abcd"
+};
+
+dataCopy = {...data, id : 123 , country : "India"};
+console.log(dataCopy);
+-------------------------------------------------------------------------------------------------------------------------
+
+//spreading array literals into obj literals
+let arr = [1, 2, 3, 4, 5, 6];
+let obj1 = {...arr};              //obj - key-val pair   so index is taken as key
+
+console.log(obj1);
+
+let obj2 = {..."Hello"};       //  index is taken as key 
+console.log(obj2);
+-------------------------------------------------------------------------------------------------------------------------
+  
+// REST
+// to see how rest is working 
+
+function sum(...args) {
+    for(let i=0; i<args.length; i++) {
+        console.log("You gave input as: ", args[i]);
+    }
+
+};
+
+sum(1);
+sum(1, 4, 5, 6);
+sum(2, 4, 5);
+-------------------------------------------------------------------------------------------------------------------------
+  
+function min(a, b, c, d) {
+    console.log(arguments);        //doesnt throw error even though we didnt declare arguments variable bcz it is an inbuilt default parameter
+}
+min(1,3,5,7);
+-------------------------------------------------------------------------------------------------------------------------
+  
+function min() {
+    console.log(arguments);      //here we removed parameters still no error
+}
+min(1,3,5,7); 
+
+-------------------------------------------------------------------------------------------------------------------------
+function min(a, b, c, d) {
+    console.log(arguments);
+    console.log(arguments.length);      //we can also  print length of arguments
+}
+min(1,3,5,7,5,6,9,9);
+-------------------------------------------------------------------------------------------------------------------------
+function min(a, b, c, d) {
+    console.log(arguments);
+    console.log(arguments.length);
+    arguments.push(1);       // throws error bcz these are functions and array methods which doesnt work on collection
+}                              //to make it work rest comes into picture
+min(1,3,5);
+-------------------------------------------------------------------------------------------------------------------------
+  
+function sum() {
+    return arguments.reduce((sum, el) => (sum+el));
+};         // throws error bcz reduce is a array method and arguments is not an array but a collection
+
+
+//to make it work we use rest
+function sum(...args) {
+    return args.reduce((sum, el) => sum+el);
+};
+
+console.log(sum(2,3 ,4 ,5));
+-------------------------------------------------------------------------------------------------------------------------
+// ex2
+function min(...args) {
+    return args.reduce((min, el) => {
+        if(min>el) {
+            return el;
+        } else {
+            return min;
+        }
+    })
+}
+console.log(min(2, 3,5,5));
+-------------------------------------------------------------------------------------------------------------------------
+  
+//we can add other parameters like msg or input
+// to send message along with args 
+function min(msg, ...args) {
+    console.log(msg);
+    return args.reduce((min, el) => {
+        if(min>el) {
+            return el;
+        } else {
+            return min;
+        }
+    })
+}
+console.log(min("hi",2, 3,5,5));
+console.log(min("hello",2, 3,5,5));
+console.log(min(10  ,2, 3,5,5));     //note : here i put 10 in place of msg
+
+-------------------------------------------------------------------------------------------------------------------------
+//DESTRUCTURING
+
+//for arrays
+
+//traditional method
+let names = ["Nammu", "Hemu", "Sonu", "Rocky", "Sonu", "Lilly", "Karan", "Komal", "Lucky"];
+let winner = names[0];
+let runner = names[1];
+ etc
+
+//using destructuring
+let names = ["Nammu", "Hemu", "Sonu", "Rocky", "Sonu", "Lilly", "Karan", "Komal", "Lucky"];
+let [winner, runner, secondRunnerup, ...others] = names;      //...others is rest 
+
+console.log(winner, runner);
+console.log(winner);
+console.log(secondRunnerup);
+console.log(others);
+-------------------------------------------------------------------------------------------------------------------------
+  
+//destructuring for objects
+let student = {
+    name : " Nammu",
+    city : "Banaglore",
+    age : 21,
+    username : "nammu@123",
+    password : "abcd",
+};
+
+let {username, city, age} = student
+console.log(username);
+console.log(username, city);
+-------------------------------------------------------------------------------------------------------------------------
+  
+let student = {
+    name : " Nammu",
+    city : "Banaglore",
+    age : 21,
+    classes : "12th",
+    username : "nammu@123",
+    password : "abcd"
+};
+
+//updating keys of the properties and accessing them
+let {username : user, city : place} = student;
+console.log(username);    //throws error
+console.log(city);        //throws error
+console.log(user);         //prints value bcz we updated username key to user
+console.log(place);
+-------------------------------------------------------------------------------------------------------------------------
+  
+let student = {
+    name : " Nammu",
+    city : "Banaglore",
+    age : 21,
+    classes : "12th",
+    username : "nammu@123",
+    password : "abcd",
+    profession : "SDE"
+};
+
+//giving default parameter class 9th
+let {city = "mumbai", age} = student;
+console.log(city);      //prints mumbai if city: blore doesnt exist in object
+console.log(age);
+-------------------------------------------------------------------------------------------------------------------------
+  
+let student = {
+    name : " Nammu",
+    city : "Banaglore",
+    age : 21,
+    classes : "12th",
+    username : "nammu@123",
+    password : "abcd",
+    // profession : "SDE"
+};
+
+//undefined variable profession - if we dont have profession in object student it prints undefined when asked for
+let {name, profession} = student;
+console.log(name);
+console.log(profession);
+console.log(name, profession);
+
+-------------------------------------------------------------------------------------------------------------------------
 
 
 
