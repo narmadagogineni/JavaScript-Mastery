@@ -2656,6 +2656,175 @@ console.log(name, profession);
 
 -------------------------------------------------------------------------------------------------------------------------
 
+  //LAST 3 SETS OF QUESTIONS BEFORE DOM RESOURCES
+Qs1
+let arr = [2, 8, 9, 5, 3, 9, 65, 34, 54, 6, 7, 4];
+let num=5;
+
+function getElements(arr, num) {
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i]>num) {
+            console.log(arr[i]);
+        }
+    }
+}
+
+// getElements(arr, num);
+---------------------------------------------------------------
+// Qs2
+let str = "abchdssjskksamlkw";
+let ans ="";
+
+function getUnique(str) {
+    for(let i=0; i<str.length; i++) {
+        let currChar = str[i];
+        if(ans.indexOf(currChar) == -1) {
+            ans+=currChar;
+        }
+    }
+    return ans;  
+}
+
+console.log(getUnique(str));
+---------------------------------------------------------------
+
+//Qs3
+let country = ["Australia", "Brazil", "United Kingdom", "Germany", "Canada"];
+
+
+function longestName(country) {
+    let ansIdx = 0;
+    for(let i=0; i<country.length; i++) {
+        let ansName = country[ansIdx].length;
+        let currName = country[i].length;
+        if(currName > ansName) {
+            ansIdx=i;
+        }
+    }
+    return country[ansIdx];
+}
+
+console.log(longestName(country));
+---------------------------------------------------------------
+//Qs4
+let str = "narmada gogineni"
+let count = 0;
+
+function countVowels(str) {
+    for(let i=0; i<str.length; i++) {
+        if(
+            str.charAt(i) == "a" ||
+            str.charAt(i) == "e" ||
+            str.charAt(i) == "i" ||
+            str.charAt(i) == "o" ||
+            str.charAt(i) == "u" 
+        ) {
+            count++;
+        }        
+    }
+    return count;
+}
+
+console.log(countVowels(str));
+---------------------------------------------------------------
+// Qs5
+let start = 100;
+let end = 200;
+
+function generateRandom(start, end) {
+    let diff = end - start;
+    return Math.floor(Math.random() * diff) + start;
+}
+
+console.log(generateRandom(100, 200));
+---------------------------------------------------------------
+// Q1
+let avgArray = (arr) => {
+    let total = 0;
+    for(let number of arr) {
+        total +=number;
+    }
+    return total / arr.length;
+};
+
+let arr = [2, 4,65, 7, 67,432,9];
+console.log(avgArray(arr) );
+
+//Q2
+const isEven = (num) => {
+    if(num%2==0) {
+        console.log("even");
+    } else {
+        console.log("odd");
+    }
+}
+
+isEven(58);
+---------------------------------------------------------------
+//Q3
+const object = {
+    message : "Hello world!",
+
+    logMessage() {
+        console.log(this.message);
+    }
+};
+
+setTimeout(object.logMessage, 1000);
+
+setTimeout(()=>{
+    console.log("hello");
+    console.log(this);
+}, 2000);
+
+let student = {
+    name : "john", 
+    prop : this
+}
+setTimeout(() => {
+    console.log("hi")
+    console.log(this);
+},2000);
+setTimeout(student.prop, 4000);
+---------------------------------------------------------------
+Qs4
+confusing
+---------------------------------------------------------------
+//Q1
+let nums = [2, 5, 6, 7, 8, 10];
+
+const square = nums.map((el) => el * el);
+console.log(square);
+
+let sum = square.reduce((res, el) => (res + el));
+console.log(sum);
+
+let avg = sum/nums.length;
+console.log(avg);
+---------------------------------------------------------------
+//Q2
+let nums = [2, 3, 4, 5, 6, 7];
+
+let increase = nums.map((el) => (el + 5));
+console.log(increase);
+---------------------------------------------------------------
+//Q3
+let arr = ["anu", "aman", "benny", "cloy", "dan"];
+let names = arr.map((el)=>(el.toUpperCase()));
+console.log(names);
+---------------------------------------------------------------
+//Q4
+const doubleAndReturnArgs = (arr, ...args) => [
+    ...arr,
+    ...args.map((values)=>(values*2)),
+];
+
+console.log(doubleAndReturnArgs([2,4, 5, 6], 5, 7));
+-------------------------------------------------------------
+//Q5
+let mergeObjects = (obj1, obj2) => ({...obj1, ...obj2});
+console.log(mergeObjects({a : 1, b: 2}, {c : 3, d:4}));
+--------------------------------------------------------------
 
 
 
